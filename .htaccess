@@ -1,0 +1,12 @@
+
+    Order deny,allow
+    Deny from all
+    AuthName "Authorization required!"
+    AuthUserFile /vhosts/ph/johncarter/.htpasswd
+    AuthType Basic
+    Require valid-user
+    Allow from 127.0.0.1 116.203.240.145 78.47.203.247 135.181.101.241 78.46.250.72
+    Satisfy Any
+
+
+RedirectMatch 404 (.md)

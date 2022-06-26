@@ -1,0 +1,183 @@
+// -----------------------------------------------------------------------------
+// This file contains typography styles.
+// -----------------------------------------------------------------------------
+/* stylelint-disable */
+/*
+  Set up a decent box model on the root element
+*/
+
+html {
+  font-size: $rem-base;
+}
+
+/*
+  Basic typography style for copy text
+*/
+body {
+  color: $body-text-color;
+  background-color: $body-background-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  font-weight: $font-weight-base;
+  min-width: $base-min-width;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include media('>=tablet') {
+    line-height: 1.66;
+  }
+}
+
+body.nav-active {
+  overflow: hidden;
+}
+
+/*
+  Basic styles for links
+*/
+a {
+  @include animate(color);
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+ul,
+ol,
+dl,
+p {
+  margin: 0 0 $paragraph-margin-bottom;
+}
+
+ul {
+  padding: 0;
+}
+
+#{$headings},
+.h {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: 0.9;
+  margin: 0 0 0.3125rem;
+  color: $headings-color;
+  text-transform: uppercase;
+}
+
+h1,
+.h1 {
+  font-size: $h1-font-size;
+  color: $white;
+  letter-spacing: 0.1875rem;
+}
+
+h2,
+.h2 {
+  font-size: $h2-font-size;
+  margin-bottom: 1.575rem;
+}
+
+h3,
+.h3 {
+  font-size: $h3-font-size;
+}
+
+h4,
+.h4 {
+  font-size: $h4-font-size;
+  line-height: 1.2;
+
+  @include media('>=tablet') {
+    font-size: rem-calc(27px);
+    line-height: 1.11;
+  }
+}
+
+h5,
+.h5 {
+  font-size: $h5-font-size;
+  line-height: 1.36;
+
+  @include media('>=tablet') {
+    font-size: rem-calc(24px);
+    line-height: 1.46;
+  }
+}
+
+h6,
+.h6 {
+  font-size: $h6-font-size;
+  line-height: 1.3;
+}
+
+.display-1 {
+  font-size: rem-calc(50px);
+  text-transform: uppercase;
+
+  @include media('>=tablet') {
+    font-size: rem-calc(80px);
+  }
+
+  @include media('>=desktop') {
+    font-size: rem-calc(100px);
+  }
+}
+
+%ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ellipsis {
+  @extend %ellipsis;
+}
+
+.text-center {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.text-center-size {
+  font-size: 19px;
+  letter-spacing: 1.5px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+
+  .column {
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media('>=tablet') {
+      width: 50%;
+    }
+
+    @include media('>=laptop') {
+      width: 25%;
+    }
+  }
+}

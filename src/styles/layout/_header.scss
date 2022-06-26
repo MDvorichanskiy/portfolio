@@ -1,0 +1,248 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site
+// -----------------------------------------------------------------------------
+.resize-active {
+  *,
+  *:before,
+  *:after {
+    transition: none !important;
+  }
+}
+
+.header {
+  padding: 10px 0;
+  background: $gray-2d;
+  position: fixed;
+  width: 100% !important;
+
+  @include media('>=desktop') {
+    width: 329px !important;
+    min-height: 500px;
+    height: 100vh;
+    padding: 100px 0 20px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+
+  @include media('>=laptop') {
+    padding: 195px 0 30px;
+  }
+
+  .container {
+    @include media('>=desktop') {
+      max-width: 289px;
+    }
+  }
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+
+  @include media('>=desktop') {
+    flex-direction: column;
+  }
+}
+
+.logo {
+  width: 140px;
+  font-size: 30px;
+  margin: 0;
+
+  @include media('>=desktop') {
+    margin: 0 0 63px;
+  }
+
+  a {
+    color: $red-cf;
+    letter-spacing: 1px;
+
+    &:hover {
+      @include animate(color);
+      color: $black;
+    }
+  }
+}
+
+.header-drop {
+  @include media('>=tablet') {
+    width: calc(100% - 150px);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+  }
+
+  @include media('>=desktop') {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  @include media('<tablet') {
+    transition: transform 0.3s ease-in-out, visibility 0.3s, opacity 0.3s;
+    position: fixed;
+    top: 59px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: $gray-2d;
+    padding: 50px 20px 20px;
+    transform: translateX(100%);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.header-drop-inner {
+  margin: 0 50px 0 0;
+
+  @include media('>=desktop') {
+    margin: 0 0 80px;
+  }
+
+  @include media('>=laptop') {
+    margin: 0 0 180px;
+  }
+}
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  text-transform: uppercase;
+  margin: 0 -10px;
+
+  @include media('>=desktop') {
+    flex-direction: column;
+  }
+
+  li {
+    padding: 0 10px;
+
+    @include media('>=desktop') {
+      padding: 0 10px 35px;
+    }
+  }
+}
+
+.social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0 -4px;
+
+  li {
+    padding: 0 4px;
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      @include animate(color);
+      color: $red-cf;
+    }
+  }
+}
+
+.nav-opener {
+  display: none;
+  
+  @include media('<tablet') {
+    @include animate(background margin);
+    display: inline-block;
+    position: relative;
+    width: 27px;
+    height: 27px;
+    text-indent: -9999px;
+    z-index: 99;
+
+    &:after,
+    &:before,
+    span {
+      transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, top 0.25s ease-in-out 0.3s;
+      content: '';
+      position: absolute;
+      height: 3px;
+      left: 0;
+      right: 0;
+      background: $white;
+    }
+
+    &:after {
+      top: 0;
+    }
+
+    span {
+      @include animate(opacity background);
+      top: 12px;
+    }
+
+    &:before {
+      top: 23px;
+    }
+  }
+}
+
+
+.nav-active {
+  @include media('<tablet') {
+    .header-drop {
+      transform: translateX(0);
+      visibility: visible;
+      opacity: 1;
+      top: 59px;
+      overflow: auto;
+      height: calc(100vh - 59px);
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .header-drop-inner {
+      margin: 0 auto 90px;
+    }
+
+    .nav-menu {
+      flex-direction: column;
+
+      li {
+        margin-bottom: 50px;
+      }
+    }
+
+    .social {
+      margin: 0 auto;
+    }
+
+    .nav-opener {
+      span {
+        opacity: 0;
+      }
+
+      &:before,
+      &:after {
+        top: 12px;
+        transition: background 0.3s ease-in-out, top 0.25s, transform 0.3s ease 0.3s;
+      }
+      
+      &:before {
+        transition: background 0.3s ease-in-out, top 0.25s, transform 0.3s ease 0.3s, width 0.3s ease 0.3s;
+        transform: rotateZ(45deg) scale(1.05);
+      }
+      
+      &:after {
+        transform: rotateZ(-45deg) scale(1.05);
+      }
+    }
+  }
+}

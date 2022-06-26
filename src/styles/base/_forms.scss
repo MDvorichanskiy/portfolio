@@ -1,0 +1,58 @@
+// stylelint-disable selector-no-qualifying-type, selector-max-compound-selectors
+/* stylelint-disable */
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the form elements of the site
+// -----------------------------------------------------------------------------
+form,
+fieldset {
+  margin: 0;
+  padding: 0;
+  border-style: none;
+}
+
+#{$form-elements} {
+  @include animate(border-color);
+
+  border: 1px solid $white;
+  font-size: 16px;
+  line-height: 1;
+  background-color: $form-background-color;
+  width: 100%;
+  min-width: 0;
+  height: $form-element-height;
+  padding: $form-element-padding;
+  border-radius: 3px;
+  -webkit-appearance: none;
+
+  &:focus {
+    //
+  }
+
+  &::-ms-clear { display: none; }
+
+  @include placeholder {
+    color: $placeholder-color;
+    font-size: $placeholder-font-size;
+  }
+}
+
+textarea,
+.textarea {
+  resize: none;
+  height: $textarea-height;
+  padding: $textarea-padding;
+  font-size: $textarea-font-size;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: 0;
+
+  &::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}

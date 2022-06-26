@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site
+// -----------------------------------------------------------------------------
+.footer {
+  padding: 20px;
+}
+
+.footer-heading {
+  font-size: 16px;
+  color: $gray-rgba00;
+
+  a {
+    color: $gray-rgba00;
+
+    &:hover {
+      @include animate(color);
+      color: $red-cf;
+    }
+  }
+}

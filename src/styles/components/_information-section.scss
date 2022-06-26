@@ -1,0 +1,41 @@
+.information-section {
+  padding: 62px 0 72px;
+
+  .section-heading {
+    margin-bottom: 75px;
+  }
+}
+
+.card {
+  max-width: 220px;
+  margin: 0 auto 20px;
+
+  .card-img {
+    display: block;
+    font-size: 75px;
+    padding-left: 12px;
+    margin-bottom: 30px;
+  }
+
+  .text-title {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .card-text {
+    font-family: $secondary-font-sans-serif;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+    margin-bottom: 3px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .text-link {
+    letter-spacing: 0.5px;
+  }
+}

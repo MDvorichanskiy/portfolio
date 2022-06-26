@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+/* stylelint-disable */
+#{$buttons} {
+  @extend %resetButton;
+}
+
+%btn {
+  display: inline-block;
+  vertical-align: top;
+  color: $btn-color;
+  padding: $btn-padding;
+  font-size: $btn-font-size;
+  line-height: $btn-line-height;
+  font-weight: $btn-font-weight;
+  text-decoration: none;
+  border: 2px solid $white;
+  border-radius: 4px;
+  margin-right: 5px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn {
+  @include animate(background);
+  @extend %btn;
+  max-width: 126px;
+
+  &:hover {
+    background: $white;
+    color: $black;
+  }
+}
+
+.btn-fill {
+  @include animate(background);
+  @extend %btn;
+  background-color: $btn-background;
+  border: 2px solid $red-cf;
+  max-width: 126px;
+
+  &:hover {
+    background: $white;
+    color: $black;
+    border: 2px solid $white;
+  }
+}
+
+.btn-max {
+  @include animate(background border);
+  @extend %btn;
+  background-color: $btn-background;
+  border: 2px solid $red-cf;
+  width: 100%;
+  margin: 0;
+
+  &:hover {
+    background: $gray-2d;
+    color: $white;
+    border: 2px solid $gray-2d;
+  }
+}
