@@ -17,18 +17,18 @@
 
   @include media('>=desktop') {
     width: 329px !important;
-    min-height: 500px;
+    min-height: 600px;
     height: 100vh;
-    padding: 100px 0 20px;
+    padding: 125px 0 20px;
     top: 0;
     left: 0;
     bottom: 0;
     overflow: auto;
   }
 
-  @include media('>=laptop') {
-    padding: 195px 0 30px;
-  }
+  // @include media('>=laptop') {
+  //   padding: 95px 0 30px;
+  // }
 
   .container {
     @include media('>=desktop') {
@@ -107,7 +107,7 @@
   }
 
   @include media('>=laptop') {
-    margin: 0 0 180px;
+    margin: 0 0 100px;
   }
 }
 
