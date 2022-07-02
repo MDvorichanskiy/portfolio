@@ -4,12 +4,19 @@
   background-repeat: no-repeat;
   padding: 70px 0 20px;
   height: 100vh;
+  min-height: 600px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 
   .container {
     max-width: 697px;
+  }
+
+  .section-heading {
+    padding-bottom: 75px;
+    position: relative;
+    z-index: 1;
   }
 }
 
