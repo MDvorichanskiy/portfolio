@@ -20,7 +20,6 @@
   border: 2px solid $white;
   border-radius: 4px;
   margin-right: 5px;
-  max-width: 126px;
 
   &:before {
     content: '';
@@ -60,7 +59,6 @@
   background-color: $btn-background;
   border: 2px solid $btn-background;
   width: 100%;
-  max-width: 580px;
   margin: 0;
   z-index: 1;
 
